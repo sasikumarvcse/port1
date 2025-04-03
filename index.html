@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Sasikumar V Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        /* Custom styles */
+        .underline {
+            position: relative;
+            display: inline-block;
+        }
+        .underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: -8px;
+            left: 0;
+            background-color: #f59e0b;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        .underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease-out;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #f59e0b;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader mb-4"></div>
+        <h1 class="text-3xl md:text-4xl font-bold text-amber-400 animate-pulse">Welcome to Sasikumar's Portfolio</h1>
+    </div>
+
+    <!-- Marquee Header -->
+    <div class="bg-gray-800 py-2 overflow-hidden">
+        <marquee width="100%" direction="right" height="50px" class="flex items-center">
+            <h1 class="text-2xl font-bold text-amber-400 m-0">
+                Portfolio
+            </h1>
+        </marquee>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex flex-wrap justify-center gap-4">
+            <a href="#" onclick="showSection('education')" class="px-3 py-2 text-amber-400 hover:text-white hover:bg-gray-700 rounded transition duration-300 underline"><b>Education</b></a>
+            <a href="#" onclick="showSection('work')" class="px-3 py-2 text-amber-400 hover:text-white hover:bg-gray-700 rounded transition duration-300 underline"><b>Work</b></a>
+            <a href="#" onclick="showSection('projects')" class="px-3 py-2 text-amber-400 hover:text-white hover:bg-gray-700 rounded transition duration-300 underline"><b>Projects</b></a>
+            <a href="#" onclick="showSection('skills')" class="px-3 py-2 text-amber-400 hover:text-white hover:bg-gray-700 rounded transition duration-300 underline"><b>Skills</b></a>
+            <a href="#" onclick="showSection('certifications')" class="px-3 py-2 text-amber-400 hover:text-white hover:bg-gray-700 rounded transition duration-300 underline"><b>Certifications</b></a>
+            <a href="#" onclick="navigateToResume2()" class="px-3 py-2 text-amber-400 hover:text-white hover:bg-gray-700 rounded transition duration-300 underline"><b>View Certificates</b></a>
+            <a href="#" onclick="navigateToResume1()" class="px-3 py-2 text-amber-400 hover:text-white hover:bg-gray-700 rounded transition duration-300 underline"><b>View Resume</b></a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="relative py-16 text-center bg-gray-800 overflow-hidden">
+        <div id="particles-js" class="absolute inset-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <img src="public/profile.jpg" alt="Sasikumar V" class="w-36 h-36 md:w-40 md:h-40 rounded-full mx-auto border-4 border-amber-400 shadow-lg animate__animated animate__fadeIn">
+            <h1 id="header-title" class="text-3xl md:text-4xl font-bold mt-6 mb-2 text-amber-400 animate__animated animate__fadeIn animate__delay-1s">I'm Sasikumar V</h1>
+            <!-- Replace the Font Awesome script with this: -->
+<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+<!-- Get your actual kit code from fontawesome.com -->
+
+<!-- Or use the CDN version: -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Update your social media icons section to this: -->
+<div class="flex justify-center space-x-4 mb-4 animate__animated animate__fadeIn animate__delay-1s">
+    <a href="https://leetcode.com/u/sasikumar-123/" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-leetcode"></i>
+    </a>
+    <a href="https://github.com/sasikumarvcse" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.hackerrank.com/profile/cse115sasikumarv" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-hackerrank"></i>
+    </a>
+    <a href="http://www.linkedin.com/in/sasikumar-v-93bb72242" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="mailto:sasikumarvcse@gmail.com" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fas fa-envelope"></i>
+    </a>
+    </div>
+    <p id="kri" class="text-gray-300 animate__animated animate__fadeIn animate__delay-1s">Hosur, Tamil Nadu | Mobile: +91 9342670019</p>
+    </header>
+
+    <!-- Summary Card -->
+    <div id="summary-card" class="container mx-auto px-4 py-8 max-w-4xl animate__animated animate__fadeIn">
+        <div class="bg-gray-800 rounded-lg shadow-xl p-6 border-l-4 border-amber-400">
+            <div id="summary-title" class="text-2xl font-bold mb-4 text-amber-400">Summary</div>
+            <p class="text-gray-300">
+                I’m Sasikumar, pursuing B.E. in Computer Science and Engineering, skilled in Python, SQL, Power BI,
+                and familiar with data science and web development (Node.js, HTML, CSS, Flask). Experienced in EDA,
+                ML, and building projects like virtual fitness monitoring and ISL gesture-to-speech conversion. Seeking
+                opportunities to apply my technical skills to solve real-world problems and deliver impactful solutions.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content Sections -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Education Section -->
+        <div id="education" class="mb-16 animate__animated animate__fadeIn">
+            <section class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-amber-400 underline">Education</h2>
+                <div class="space-y-6">
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-2 text-white">Adhiyamaan College Of Engineering</h3>
+                        <p class="text-gray-300 mb-2">Batch - (2021-2025)</p>
+                        <p class="text-gray-300">BE Computer Science And Engineering | GPA: <span class="font-bold text-amber-400">8.34</span></p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-2 text-white">Swamy Vivekananda School</h3>
+                        <p class="text-gray-300">12th: <span class="font-bold text-amber-400">87%</span></p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-2 text-white">Swamy Vivekananda School</h3>
+                        <p class="text-gray-300">10th: <span class="font-bold text-amber-400">84%</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Work Experience Section -->
+        <div id="work" class="mb-16 animate__animated animate__fadeIn">
+            <section class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-amber-400 underline">Work Experience</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-2 text-white">Data Science Intern</h3>
+                        <p class="text-gray-300 mb-3"><span class="font-bold">Inspire Softech Solutions</span> | Dec 2023 – Jan 2024</p>
+                        <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                            <li>Worked on real-time projects involving Python for Data Science.</li>
+                            <li>Conducted data preprocessing, analysis, and dashboard creation.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-2 text-white">Flutter Developer</h3>
+                        <p class="text-gray-300 mb-3"><span class="font-bold">Globout</span> | July – Sep 2024</p>
+                        <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                            <li>Collaborated with a team to develop and enhance app features.</li>
+                            <li>Improved documentation processes to streamline task tracking.</li>
+                            <li>Utilized Git for version control and team collaboration.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-2 text-white">Data Science Intern</h3>
+                        <p class="text-gray-300 mb-3"><span class="font-bold">Nullclass</span> | Sep – Nov 2024</p>
+                        <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                            <li>Preprocessed raw data and created dashboards using Power BI.</li>
+                            <li>Utilized SQL to manage and query databases efficiently.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+       <!-- Projects Section -->
+<div id="projects" class="mb-16 animate__animated animate__fadeIn">
+    <section class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-amber-400 underline">Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">Live News Aggregator Platform</h3>
+                <p class="text-gray-300 mb-3"><span class="font-bold">Mar - Jun 2025</span></p>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                    <li>Developed a real-time news aggregator that fetches and displays live news from multiple API sources</li>
+                    <li>Implemented user authentication with email verification using Node.js and JWT</li>
+                    <li>Built interactive UI with React featuring personalized news feeds and bookmarking</li>
+                    <li>Integrated news categorization and search functionality with MongoDB</li>
+                    <li>
+                        <a href="https://stalwart-gecko-dbed0c.netlify.app" target="_blank" class="text-amber-400 hover:underline font-bold">Live Demo</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">Smart Nutrition Management System</h3>
+                <p class="text-gray-300 mb-3"><span class="font-bold">Jan - May 2025</span></p>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                    <li>Developed a Smart Nutrition Management System using Node.js, Flask, and ML for food recognition via images or live camera.</li>
+                    <li>Provided nutritional analysis, meal tracking, food recommendations, and a health chatbot using TensorFlow and OpenCV.</li>
+                    <li><a href="https://github.com/sasikumarvcse/main18-03" target="_blank" class="text-amber-400 hover:underline font-bold">GitHub Repo</a></li>
+                </ul>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">Virtual Fitness Monitoring Using ML Techniques</h3>
+                <p class="text-gray-300 mb-3"><span class="font-bold">Oct 2024 – Jan 2024</span></p>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                    <li>Developed a system to predict vital signs (heart rate, blood pressure, respiratory rate) using facial recognition.</li>
+                    <li>Utilized frameworks such as OpenCV and Scikit-learn.</li>
+                    <li><a href="https://github.com/sasikumarvcse/virtual-implementation-using-ML" target="_blank" class="text-amber-400 hover:underline font-bold">GitHub Repo</a></li>
+                </ul>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">Indian Sign Language gesture to speech conversion (ISL)</h3>
+                <p class="text-gray-300 mb-3">Oct 2024 – Nov 2024</p>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2">
+                    <li>Collaborated with a team to develop and enhance app features.</li>
+                    <li>Improved documentation processes to streamline task tracking.</li>
+                    <li>Utilized Git for version control and team collaboration.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+        <!-- Skills Section -->
+        <div id="skills" class="mb-16 animate__animated animate__fadeIn">
+            <section class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-amber-400 underline">Skills and Programming</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Technical Skills</h3>
+                        <ul class="space-y-3">
+                            <li class="text-gray-300"><span class="font-bold text-amber-400">Programming Languages:</span> Python, SQL, HTML, CSS, Node js, Flask, ML, Javascript, MongoDB</li>
+                            <li class="text-gray-300"><span class="font-bold text-amber-400">Frameworks/Tools:</span> Kivy, Numpy, Pandas, Matplotlib, OpenCV, Excel, UI</li>
+                            <li class="text-gray-300"><span class="font-bold text-amber-400">Data Science:</span> Data Analysis, Data Visualization, Machine Learning</li>
+                            <li class="text-gray-300"><span class="font-bold text-amber-400">Platforms:</span> Android Studio, IntelliJ IDEA, VS Code, Pycharm, Power BI, Figma, Canva</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Soft Skills</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-gray-300">Communication</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-gray-300">Problem-solving</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-gray-300">Collaboration</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-gray-300">Team Management</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Certifications Section -->
+<div id="certifications" class="mb-16 animate__animated animate__fadeIn">
+    <section class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-amber-400 underline">Achievements and Certifications</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">IJRAR Journal on Smart Nutrition Management – <a href="https://ijrar.org/track.php?r_id=308780" target="_blank" class="text-amber-400 hover:underline">Publication</a></h3>
+                <p class="text-gray-300"><span class="font-bold">April , 2025</span></p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">IJATEM Journal on ISL – <a href="https://doi.org/10.59544/lnzk4758/icrcct24p70" target="_blank" class="text-amber-400 hover:underline">Publication</a></h3>
+                <p class="text-gray-300"><span class="font-bold">November 2024</span></p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">Digital Software Engineering and DevOps by TCS</h3>
+                <p class="text-gray-300"><span class="font-bold">February 2024</span></p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">Introduction to Industrial 4.0 and Industrial by NPTEL</h3>
+                <p class="text-gray-300"><span class="font-bold">January - April 2024</span></p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">ESG Virtual Experience Program by TCS</h3>
+                <p class="text-gray-300"><span class="font-bold">June 2023</span></p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6 shadow-lg card">
+                <h3 class="text-xl font-bold mb-2 text-white">Workshops on AWS, ML, and DL</h3>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Contact Me Form -->
+            <div id="contact-form" class="bg-gray-700 rounded-lg shadow-xl p-8 animate__animated animate__fadeIn">
+                <h3 class="text-2xl font-bold mb-6 text-center text-amber-400">Contact Me</h3>
+                <form id="contactForm" onsubmit="submitForm(event)" class="space-y-4">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required
+                            class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 text-white">
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required
+                            class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 text-white">
+                    </div>
+                    <div>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="4" required
+                            class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 text-white"></textarea>
+                    </div>
+                    <button type="submit" onclick="sendMail"
+                        class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Submit
+                    </button>
+                </form>
+                <p id="form-status" class="mt-4 text-center text-gray-300"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Marquee -->
+    <div class="bg-gray-900 py-2 overflow-hidden">
+        <marquee width="100%" direction="right" height="50px" class="flex items-center">
+            <span class="text-xl font-bold text-amber-400">@ Designed by Sasikumar V</span>
+        </marquee>
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Replace the Font Awesome script with this: -->
+<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+<!-- Get your actual kit code from fontawesome.com -->
+
+<!-- Or use the CDN version: -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Update your social media icons section to this: -->
+<div class="flex justify-center space-x-4 mb-4 animate__animated animate__fadeIn animate__delay-1s">
+    <a href="https://leetcode.com/u/sasikumar-123/" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-leetcode"></i>
+    </a>
+    <a href="https://github.com/sasikumarvcse" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.hackerrank.com/profile/cse115sasikumarv" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-hackerrank"></i>
+    </a>
+    <a href="http://www.linkedin.com/in/sasikumar-v-93bb72242" target="_blank" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="mailto:sasikumarvcse@gmail.com" class="text-gray-300 hover:text-amber-400 transition duration-300 text-2xl">
+        <i class="fas fa-envelope"></i>
+    </a>
+    </div>
+    </div>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "ozo3Ipz_kMOQlvlXe",
+            });
+        })();
+    </script>
+
+    <!-- Scripts -->
+    <script>
+        // Loading screen animation
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 1000);
+            }, 2000);
+        });
+
+        // Particles.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#f59e0b"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#f59e0b",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+         // Improved navigation function
+    function showSection(sectionId, event) {
+        if (event) event.preventDefault();
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+
+
+        // Form submission
+        function submitForm(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const status = document.getElementById('form-status');
+            
+            emailjs.sendForm('service_123', 'template_123', form)
+                .then(function(response) {
+                    status.textContent = 'Message sent successfully!';
+                    status.style.color = '#4ade80';
+                    form.reset();
+                }, function(error) {
+                    status.textContent = 'Failed to send message. Please try again.';
+                    status.style.color = '#f87171';
+                });
+        }
+
+        // Navigation functions
+        function showSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function navigateToResume1() {
+    try {
+        window.open('assets/new(sasi).pdf (9).pdf', '_blank');
+    } catch (error) {
+        console.error("Error opening resume:", error);
+        alert("Failed to open resume. Please check if the file exists.");
+    }
+}
+
+function navigateToResume2() {
+    try {
+        window.open('certificates.html', '_blank');
+    } catch (error) {
+        console.error("Error opening certificates:", error);
+        alert("Failed to open certificates. Please check if the file exists.");
+    }
+}
+
+        // Typing effect for header title
+        // Fixed typing effect for header title
+    const headerTitle = document.getElementById('header-title');
+    const text = "I'm Sasikumar V";
+    let index = 0;
+    headerTitle.textContent = ''; // Clear the content first
+
+    function typeWriter() {
+        if (index < text.length) {
+            headerTitle.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+
+    // Start typing effect after loading
+    setTimeout(typeWriter, 1500);
+    </script>
+</body>
+</html>
