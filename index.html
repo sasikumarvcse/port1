@@ -78,29 +78,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Welcome Modal */
-        .welcome-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9998;
-        }
-        .welcome-content {
-            background-color: #1f2937;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            border-top: 4px solid #f59e0b;
-        }
-
         /* Theme variables */
         .light-theme {
             --bg-color: #f3f4f6;
@@ -185,16 +162,6 @@
     </style>
 </head>
 <body class="dark-theme">
-    <!-- Welcome Modal -->
-    <div id="welcome-modal" class="welcome-modal">
-        <div class="welcome-content">
-            <h2 class="text-2xl font-bold mb-4 text-amber-400">Welcome to My Portfolio!</h2>
-            <p class="mb-6 text-gray-300">Please enter your name to continue:</p>
-            <input type="text" id="welcome-name" placeholder="Your name" class="w-full px-4 py-2 rounded border border-gray-600 bg-gray-800 text-white mb-4 focus:outline-none focus:ring-2 focus:ring-amber-400">
-            <button id="welcome-submit" class="px-6 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded transition">Continue</button>
-        </div>
-    </div>
-
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loader mb-4"></div>
@@ -340,7 +307,7 @@
                             <li>Built interactive UI with React featuring personalized news feeds and bookmarking</li>
                             <li>Integrated news categorization and search functionality with MongoDB</li>
                             <li>
-                                <a href="https://stalwart-gecko-dbed0c.netlify.app" target="_blank" class="theme-accent hover:underline font-bold">Visit</a>
+                                <a href="https://stalwart-gecko-dbed0c.netlify.app" target="_blank" class="theme-accent hover:underline font-bold">Live Demo</a>
                             </li>
                         </ul>
                     </div>
@@ -350,7 +317,7 @@
                         <ul class="list-disc pl-5 theme-text-secondary space-y-2">
                             <li>Developed a Smart Nutrition Management System using Node.js, Flask, and ML for food recognition via images or live camera.</li>
                             <li>Provided nutritional analysis, meal tracking, food recommendations, and a health chatbot using TensorFlow and OpenCV.</li>
-                            <li><a href="https://github.com/sasikumarvcse/main18-03" target="_blank" class="theme-accent hover:underline font-bold">Visit</a></li>
+                            <li><a href="https://github.com/sasikumarvcse/main18-03" target="_blank" class="theme-accent hover:underline font-bold">GitHub Repo</a></li>
                         </ul>
                     </div>
                     <div class="theme-card rounded-lg p-6 shadow-lg card">
@@ -360,7 +327,7 @@
                             <li>Preprocessed and analyzed Tamil Nadu district data from 2011 to 2023</li>
                             <li>Applied Exploratory Data Analysis (EDA) to uncover key insights</li>
                             <li>Created visualizations to identify trends and patterns across districts</li>
-                            <li><a href="https://www.linkedin.com/posts/sasikumar-v-93bb72242_hello-connections-i-have-gathered-datasets-activity-7290985305938010112-W87w?utm_source=share&utm_medium=member_android&rcm=ACoAADxULb8BjOM1PR5g4mrc7IxEu4KAQFKYSw0" target="_blank" class="theme-accent hover:underline font-bold">Visit</a></li>
+                            <li><a href="https://www.linkedin.com/posts/sasikumar-v-93bb72242_hello-connections-i-have-gathered-datasets-activity-7290985305938010112-W87w?utm_source=share&utm_medium=member_android&rcm=ACoAADxULb8BjOM1PR5g4mrc7IxEu4KAQFKYSw0" target="_blank" class="theme-accent hover:underline font-bold">View Project</a></li>
                         </ul>
                     </div>
                     <div class="theme-card rounded-lg p-6 shadow-lg card">
@@ -369,7 +336,7 @@
                         <ul class="list-disc pl-5 theme-text-secondary space-y-2">
                             <li>Developed a system to predict vital signs (heart rate, blood pressure, respiratory rate) using facial recognition.</li>
                             <li>Utilized frameworks such as OpenCV and Scikit-learn.</li>
-                            <li><a href="https://github.com/sasikumarvcse/virtual-implementation-using-ML" target="_blank" class="theme-accent hover:underline font-bold">Visit</a></li>
+                            <li><a href="https://github.com/sasikumarvcse/virtual-implementation-using-ML" target="_blank" class="theme-accent hover:underline font-bold">GitHub Repo</a></li>
                         </ul>
                     </div>
                     <div class="theme-card rounded-lg p-6 shadow-lg card">
@@ -393,7 +360,7 @@
                     <div class="theme-card rounded-lg p-6 shadow-lg card">
                         <h3 class="text-xl font-bold mb-4 theme-text">Technical Skills</h3>
                         <ul class="space-y-3">
-                            <li class="theme-text-secondary"><span class="font-bold theme-accent">Programming Languages:</span> Python, SQL, HTML, Tailwind CSS, Node js, Flask, ML, Javascript, MongoDB</li>
+                            <li class="theme-text-secondary"><span class="font-bold theme-accent">Programming Languages:</span> Python, SQL, HTML, CSS, Node js, Flask, ML, Javascript, MongoDB</li>
                             <li class="theme-text-secondary"><span class="font-bold theme-accent">Frameworks/Tools:</span> Kivy, Numpy, Pandas, Matplotlib, OpenCV, Excel, UI</li>
                             <li class="theme-text-secondary"><span class="font-bold theme-accent">Data Science:</span> Data Analysis, Data Visualization, Machine Learning</li>
                             <li class="theme-text-secondary"><span class="font-bold theme-accent">Platforms:</span> Android Studio, IntelliJ IDEA, VS Code, Pycharm, Power BI, Figma, Canva</li>
@@ -449,48 +416,21 @@
     <!-- Footer -->
     <footer class="theme-footer py-12">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div id="visitor-greeting" class="theme-card rounded-lg shadow-xl p-6 mb-8 animate__animated animate__fadeIn">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <!-- Greeting with animated icon -->
-                    <div class="flex items-center mb-4 md:mb-0">
-                        <div class="mr-4 text-amber-400 animate-bounce">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                        </div>
-                        <h3 id="greeting-text" class="text-xl md:text-2xl font-bold theme-text"></h3>
-                    </div>
-                    
-                    <!-- View counter with pulse animation -->
-                    <div class="flex items-center bg-gray-800 dark:bg-gray-700 px-4 py-2 rounded-full shadow-inner">
-                        <span class="text-gray-300 mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                        </span>
-                        <span class="text-gray-300">Views:</span>
-                        <span id="viewCount" class="ml-1 font-bold text-amber-400 animate-pulse">0</span>
-                    </div>
-                </div>
-            </div>
-            
-
             <!-- Contact Me Form -->
             <div id="contact-form" class="theme-card rounded-lg shadow-xl p-8 animate__animated animate__fadeIn">
                 <h3 class="text-2xl font-bold mb-6 text-center theme-accent">Contact Me</h3>
                 <form id="contactForm" onsubmit="submitForm(event)" class="space-y-4">
                     <div>
                         <input type="text" id="name" name="name" placeholder="Your Name" required
-                            class="w-full px-4 py-2 theme-card border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 theme-text">
+                            class="w-full px-4 py-2 theme-card border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 text-white">
                     </div>
                     <div>
                         <input type="email" id="email" name="email" placeholder="Your Email" required
-                            class="w-full px-4 py-2 theme-card border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 theme-text">
+                            class="w-full px-4 py-2 theme-card border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 text-white">
                     </div>
                     <div>
                         <textarea id="message" name="message" placeholder="Your Message" rows="4" required
-                            class="w-full px-4 py-2 theme-card border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 theme-text"></textarea>
+                            class="w-full px-4 py-2 theme-card border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400 text-white"></textarea>
                     </div>
                     <button type="submit" onclick="sendMail"
                         class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition duration-300">
@@ -717,124 +657,6 @@
             });
         });
 
-        // Welcome modal functionality
-        function handleWelcome() {
-            const welcomeModal = document.getElementById('welcome-modal');
-            const welcomeName = document.getElementById('welcome-name');
-            const welcomeSubmit = document.getElementById('welcome-submit');
-            
-            // Check if name is already stored
-            const storedName = localStorage.getItem('portfolioVisitorName');
-            if (storedName) {
-                welcomeModal.style.display = 'none';
-                updateViewCount();
-                showGreeting(storedName);
-                return;
-            }
-            
-            // Show modal
-            welcomeModal.style.display = 'flex';
-            
-            // Handle submit
-            welcomeSubmit.addEventListener('click', () => {
-                const name = welcomeName.value.trim();
-                if (name) {
-                    localStorage.setItem('portfolioVisitorName', name);
-                    welcomeModal.style.display = 'none';
-                    updateViewCount();
-                    showGreeting(name);
-                } else {
-                    alert('Please enter your name to continue');
-                }
-            });
-            
-            // Handle Enter key
-            welcomeName.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    const name = welcomeName.value.trim();
-                    if (name) {
-                        localStorage.setItem('portfolioVisitorName', name);
-                        welcomeModal.style.display = 'none';
-                        updateViewCount();
-                        showGreeting(name);
-                    } else {
-                        alert('Please enter your name to continue');
-                    }
-                }
-            });
-        }
-
-        // Visitor counter functions
-    function updateViewCount() {
-        let views = localStorage.getItem('portfolioViews');
-        views = views ? parseInt(views) + 1 : 1;
-        localStorage.setItem('portfolioViews', views);
-        document.getElementById('viewCount').textContent = views;
-        
-        // Add confetti effect for first visit
-        if (views === 1) {
-            const confetti = document.createElement('div');
-            confetti.innerHTML = `
-                <style>
-                    .confetti {
-                        position: fixed;
-                        width: 10px;
-                        height: 10px;
-                        background-color: #f59e0b;
-                        opacity: 0;
-                        z-index: 1000;
-                        animation: confetti-fall 3s ease-in-out forwards;
-                    }
-                    @keyframes confetti-fall {
-                        0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-                        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-                    }
-                </style>
-            `;
-            document.body.appendChild(confetti);
-            
-            // Create confetti elements
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = `${Math.random() * 100}vw`;
-                    confetti.style.animationDelay = `${Math.random() * 0.5}s`;
-                    confetti.style.backgroundColor = `hsl(${Math.random() * 60 + 30}, 100%, 50%)`;
-                    confetti.style.width = `${Math.random() * 10 + 5}px`;
-                    confetti.style.height = `${Math.random() * 10 + 5}px`;
-                    document.body.appendChild(confetti);
-                    
-                    // Remove confetti after animation
-                    setTimeout(() => {
-                        confetti.remove();
-                    }, 3000);
-                }, i * 50);
-            }
-        }
-    }
-
-    function showGreeting(name) {
-        const greetingElement = document.getElementById('greeting-text');
-        greetingElement.textContent = `Hello, ${name}! Welcome to my portfolio.`;
-        
-        // Add typing animation
-        greetingElement.style.opacity = '0';
-        setTimeout(() => {
-            greetingElement.style.transition = 'opacity 0.5s ease-in-out';
-            greetingElement.style.opacity = '1';
-        }, 100);
-    }
-
-    // Call these functions when needed
-    document.addEventListener('DOMContentLoaded', function() {
-        const storedName = localStorage.getItem('portfolioVisitorName');
-        if (storedName) {
-            updateViewCount();
-            showGreeting(storedName);
-        }
-    });
-
         // Improved navigation function
         function showSection(sectionId, event) {
             if (event) event.preventDefault();
@@ -917,15 +739,6 @@
 
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Initialize welcome modal
-        document.addEventListener('DOMContentLoaded', function() {
-            // First show loading screen
-            setTimeout(function() {
-                // Then handle welcome modal
-                handleWelcome();
-            }, 2000);
-        });
     </script>
 </body>
 </html>
